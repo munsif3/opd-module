@@ -1,0 +1,140 @@
+<section class="content">
+    <div ng-controller="AddToQueCtrl" ng-init="getToQueue()">
+        <div class="modal-example">
+            <script type="text/javascript" src="http://his.sliit.lk/OPD/assets/js/divSwitch.js"></script>
+
+
+            <!--Starting point of patient profile mini panel-->
+            <div class="panel panel-info" style="margin-top: 8px;">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Patient Information</h3>
+                </div>
+                <div class="panel-body"><!--Starting point of patient profile mini panel body-->
+
+
+                    <table class="table table-hover ">
+
+                        <tbody>
+                        <tr>
+
+                            <td style="border-style:none;">
+
+                                <h4>{{patient.name}}/ {{patient.gender}} / {{patient.age}} / {{patient.status}} &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp;    </h4> PatientID : {{patient.id}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp;
+                                &nbsp; DOB : {{patient.DOB}} &nbsp;
+
+                                <a style="float:right;" href="http://his.sliit.lk/OPD/index.php/patient_c/edit/2"><img
+                                        src="http://his.sliit.lk/OPD//assets/ico/edit.png" title="Edit Patient Profile"></a>
+
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div><!--Ending point of patient profile mini panel body-->
+        </div><!--Ending point of patient profile mini panel-->
+
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h5 class="panel-title">Add to Queue</h5>
+            </div>
+
+            <div class="panel-body">
+
+                <div class="form-horizontal">
+
+                    <!-- Message for operation status  ************************************************************** -->
+                    <form accept-charset="utf-8"
+                          name="myform">
+                        <!-- **************************************************************************************** -->
+                        <div class="form-group input-group" style="margin-top: 10px">
+                            <span style="width: 155px" class="input-group-addon">Automatic Assignment</span>
+                            <button type="submit" class="btn btn-primary" style="width: 150px" id="autobtn"
+                                    name="autobtn" value="auto">Auto Assign
+                            </button>
+                        </div>
+                        <hr>
+                        <br>
+
+                        <div class="form-group input-group" style="margin-top: 10px">
+                            <span style="width: 155px" class="input-group-addon">Assigned To*</span>
+
+                            <select class="form-control" style="width: 350px" name="doctor" required="">
+
+
+                                <option selected="" value=" 1"></option>
+
+
+                                <option value=" 19"></option>
+
+                            </select>
+                        </div>
+
+                        <div class="form-group input-group" style="margin-top: 10px">
+                            <span style="width: 155px" class="input-group-addon">Date and Time </span>
+
+                            <input class="form-control" style="width: 350px" type="text" id="inputDateandTime"
+                                   readonly="" name="DateandTime" placeholder="" value="2017-06-27 23:40:52 pm">
+                        </div>
+
+
+                        <div class="form-group input-group" style="margin-top: 10px">
+                            <span style="width: 155px" class="input-group-addon">Assign By </span>
+
+                            <input class="form-control" style="width: 350px" type="text" id="inputDoctor" readonly=""
+                                   name="Doctor" placeholder="" value="Rasangi">
+                        </div>
+
+                        <div class="form-group input-group" style="margin-top: 10px">
+                            <span style="width: 155px" class="input-group-addon">Remarks</span>
+                            <div class="controls">
+                                <textarea class="form-control"
+                                          style="min-width: 350px;max-width: 350px;min-height: 60px;height:auto"
+                                          id="inputRemarks" name="Remarks" placeholder=""></textarea>
+                            </div>
+                        </div>
+
+                        <div id="queuetable"
+                             style="float: right;    height: 4px;    top: -336px;    margin-left: 591px; margin-top: 80px;   position: relative;">
+                            <h5 align="left">Available Doctors</h5>
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Doctor</th>
+                                    <th>Patient Count</th>
+                                    <th>Status</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <tr ng-repeat="doctor in doctors">
+                                    <td>{{doctor.doctorName}}</td>
+                                    <td>{{doctor.patientcount}}</td>
+                                    <td>{{doctor.queueStatus}}</td>
+                                </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+
+
+                        <div class="container-fluid">
+                            <div class="form-actions">
+
+                                <button type="submit" class="btn btn-primary"
+                                        ng-click="go('/token');setToQueue(patient)">Add
+                                </button>
+                                <button type="reset" class="btn" onclick="history.go(-1);">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--Ending point of panel body-->
+            </div>
+        </div>
+    </div>
+</section>

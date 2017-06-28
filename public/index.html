@@ -51,7 +51,7 @@ desired effect
 |---------------------------------------------------------|
 -->
 
-<body class="hold-transition skin-green sidebar-mini">
+<body class="hold-transition skin-green sidebar-mini" ng-app="OPDApp">
 <div class="wrapper">
 
     <!-- Main Header -->
@@ -261,7 +261,7 @@ desired effect
                 <!-- Optionally, you can add icons to the links -->
                 <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                 <li><a href="#"><i class="fa fa-stethoscope"></i> <span>My OPD Patients</span></a></li>
-                <li><a href="#"><i class="fa fa-sort-amount-asc"></i> <span>My Queue</span></a></li>
+                <li><a href="#!MyQueue"><i class="fa fa-sort-amount-asc"></i> <span>My Queue</span></a></li>
                 <li class="treeview">
                     <a href="#"><i class="fa fa-th-list"></i> <span>Questionnaire</span>
                         <span class="pull-right-container">
@@ -293,7 +293,7 @@ desired effect
         <!-- Main content -->
         <section class="content">
 
-
+            <ng-view></ng-view>
             <!-- Your Page Content Here -->
 
         </section>
@@ -391,13 +391,23 @@ desired effect
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
-
+<script src="modules/angular/angular.js"></script>
+<script src="modules/angular-route/angular-route.js"></script>
 <!-- jQuery 2.2.3 -->
 <script src="assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="assets/dist/js/app.min.js"></script>
+<script src="modules/PVW_opd.modules.js"></script>
+<script src="controllers/PVW_AddToQueue.controller.js"></script>
+<script src="services/PVW_AddToQueMessagePassService.js"></script>
+<script src="controllers/PVW_MyQue.controller.js"></script>
+<script src="services/PVW_MyQueueMessagePassService.js"></script>
+<script src="controllers/PVW_Checkout.controller.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.6.0/angular-local-storage.js"></script>
+
+
 
 <!--Custom JS-->
 

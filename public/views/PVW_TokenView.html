@@ -1,0 +1,70 @@
+<div ng-controller="AddToQueCtrl" ng-init="getToToken()">
+    <section class="content">
+        <div class="modal-example">
+            <script type="text/javascript" src="http://his.sliit.lk/OPD/assets/js/divSwitch.js"></script>
+
+
+            <!--Starting point of patient profile mini panel-->
+            <div class="panel panel-info" style="margin-top: 8px;">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Patient Information</h3>
+                </div>
+                <div class="panel-body"><!--Starting point of patient profile mini panel body-->
+
+
+                    <table class="table table-hover ">
+
+                        <tbody>
+                        <tr>
+
+                            <td style="border-style:none;">
+
+                                <h4>{{patient.name}}/ {{patient.gender}} / {{patient.age}} / {{patient.status}}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp;    </h4> PatientID :  {{patient.id}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; DOB : {{patient.DOB}} &nbsp;
+
+                                <a style="float:right;" href="http://his.sliit.lk/OPD/index.php/patient_c/edit/3"><img
+                                        src="http://his.sliit.lk/OPD//assets/ico/edit.png" title="Edit Patient Profile"></a>
+
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div><!--Ending point of patient profile mini panel body-->
+        </div><!--Ending point of patient profile mini panel-->
+
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h5 class="panel-title">Add to Queue</h5>
+            </div>
+
+            <div class="panel-body">
+
+                <div class="form-horizontal">
+
+                    <!-- Message for operation status  ************************************************************** -->
+
+                    <div class="alert alert-success">
+                        <button onclick="javascript:window.open('../../print_c/print_token/3/1','patientToken','width=490,height=250');"
+                                style="float:right" class="btn btn-default"><i
+                                class="glyphicon         glyphicon-print"> </i> Print Token
+                        </button>
+
+                        <strong>
+                            Token Number : 1
+                        </strong>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </section>
+</div>

@@ -1,0 +1,161 @@
+
+    <!-- Content Header (Page header) -->
+
+    <script type="text/javascript">
+        document.getElementsByClassName('navsidebar')[0].className = "navsidebar active";
+    </script>
+
+
+
+
+    <section class="content-header">
+        <h1>
+            Questionnaire <small> Add Questionnaire</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#"><i class="fa fa-th-list"></i> Questionnaire</a></li>
+            <li class="active">View Questionnaire
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+        </ol>
+    </section>
+    <br>
+
+    <section class="content">
+        <!-- COLOR PALETTE -->
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <h3 class="box-title">
+                    <i class="fa  fa-th-list"></i> Add Questionnaire
+                </h3>
+            </div>
+            <div class="box-body">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="box box-default">
+                            <div class="box-body">
+                                <form action="http://his.sliit.lk/OPD/index.php/questionnaire_c/add_question" method="post" accept-charset="utf-8" name="qform" id="qform">
+
+
+                                    <div class="form-group input-group">
+                                        <span class="input-group-addon">Name*</span> <input type="text" class="form-control" id="name" name="name" required="required" value="">
+
+                                    </div>
+
+
+                                    <div class="form-group input-group">
+                                        <span class="input-group-addon">Relate To</span>
+
+                                        <select id="relateto" class="form-control" name="relateto">
+                                            <option value="opd">OPD Visit</option>
+                                            <option value="clinic">Clinic</option>
+                                        </select>
+
+                                    </div>
+
+
+                                    <div class="form-group input-group">
+                                        <span class="input-group-addon">Remarks</span>
+                                        <textarea rows="7" class="form-control" id="remarks" name="remarks">                                                    </textarea>
+
+                                    </div>
+                                </form></div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <!-- /.col -->
+
+                    <div class="col-md-6">
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <i class="fa  fa-plus-square-o"></i>
+                                <h3 class="box-title">Add Questions</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+
+                                <div class="form-group input-group">
+                                    <span class="input-group-addon">Question Text*</span> <input type="text" class="form-control" id="text" name="text" required="required" value="">
+
+                                </div>
+
+
+                                <div class="form-group input-group">
+                                    <span class="input-group-addon">Answer Type</span> <select id="answertype" name="answertype" class="form-control">
+                                    <option value="text">Text</option>
+                                    <option value="number">Number</option>
+                                    <option value="date">Date</option>
+                                    <option value="choice">Choice</option>
+                                </select>
+
+                                </div>
+
+
+
+                                <div class="form-group input-group">
+                                    <span class="input-group-addon">Answer Values</span>
+
+                                    <textarea class="form-control" readonly="" id="answervals" name="answervals" rows="2"> </textarea>
+
+                                </div>
+                                <div class="form-group input-group">
+                                    <button type="submit" class="btn btn-primary">Add</button>
+                                </div>
+
+
+
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+
+
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <hr>
+
+
+
+
+
+
+
+                        <div class="form-actions" style="margin-top: 20px;">
+
+
+
+                            <form action="http://his.sliit.lk/OPD/index.php/questionnaire_c/save" method="post" accept-charset="utf-8" name="myform">                    <div class="form-group input-group">
+                                <button type="submit" class="btn btn-success pull-left">Save							</button>&nbsp;
+                                <button type="reset" class="btn" onclick="history.go(-1);">Cancel</button>
+                            </div></form>
+
+
+
+
+
+
+
+
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </div>
+
+            </div></div></section>
+    <!-- /.content -->
+
+
+
+
+
+
+
+
+
