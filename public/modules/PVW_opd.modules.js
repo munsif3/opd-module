@@ -29,6 +29,9 @@ myOPDApp.config(['$routeProvider',function ($routeProvider) {
         .when('/token',{
             templateUrl : 'views/PVW_TokenView.html'
         })
+        .when('/SelectedPerson',{
+            templateUrl : 'views/PVW_PatientToAdd.html'
+        })
 
 
 }]);

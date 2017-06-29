@@ -1,4 +1,4 @@
-<div ng-controller="ChechkoutcCtrl" ng-init="getPatientDetails()">
+<div ng-controller="ChechkoutcCtrl" >
     <section class="content">
         <div class="modal-example">
 
@@ -78,7 +78,7 @@
                                                                 <tr>
                                                                     <td><strong>Address </strong></td>
                                                                     <td style="padding-left: 10px">
-                                                                        {{patient.abcd}}
+                                                                        {{patient.address}}
                                                                     </td>
 
 
@@ -142,6 +142,10 @@
                                                                 </tbody>
                                                             </table>
                                                         </div>
+                                                        <button class="btn btn-app"   ng-click="go('/MyQueue');"
+                                                                style="color:limegreen;margin-top:40px;;margin-left:200px;" >
+                                                            <i class="fa fa-edit" ></i> Checkout
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>

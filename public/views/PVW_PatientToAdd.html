@@ -1,0 +1,251 @@
+<div class="col-md-12" style="margin-top:10px ; margin-left:-20px" >
+
+
+    <br>
+
+
+    <div class="panel panel-info" style="margin-left: 40px; "><!-- starting point of panel-->
+        <div class="panel-heading"><!-- starting point of panel head-->
+        </div><!-- Ending point of panel head-->
+        <div class="panel-body"><!-- starting point of body-->
+
+            <!-- Main content -->
+
+
+            <div class="row" ng-controller="AddToQueCtrl">
+                <div class="col-md-6">
+
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-lg-11" style="width:950px ; margin-right:5px">
+                                <div class="well well-sm">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="col-sm-10 ">
+                                                <img class="img-rounded img-responsive"
+                                                     src="http://his.sliit.lk/OPD//assets/ico/proimage.jpg">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-5">
+
+                                            <h4><b>{{patient.title}}{{patient.firstName}}{{patient.lastName}} </b></h4>
+
+                                            <table>
+                                                <tbody>
+                                                <tr>
+                                                    <td style="padding-right: 40px"><strong>HIN</strong></td>
+                                                    <td style="padding-left: 10px">
+                                                        {{patient.id}}
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><strong>Gender</strong></td>
+                                                    <td style="padding-left: 10px">
+                                                        {{patient.gender}}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 90px"><strong>Civil Status</strong></td>
+                                                    <td style="padding-left: 10px">
+                                                        {{patient.status}}
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 50px"><strong>Date of Birth</strong></td>
+                                                    <td style="padding-left: 10px">
+                                                        {{patient.dob}}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 50px"><strong>Age</strong></td>
+                                                    <td style="padding-left: 10px">~
+                                                        {{patient.age}}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Phone </strong></td>
+                                                    <td style="padding-left: 10px">
+                                                        {{patient.phone}}
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Address </strong></td>
+                                                    <td style="padding-left: 10px">
+                                                        {{patient.address}}
+                                                    </td>
+
+
+                                                </tr>
+
+
+                                                </tbody>
+                                            </table>
+                                            <!-- Split button -->
+
+                                        </div>
+                                        <div class="col-md-4">
+
+                                            <div class="btn-group pull-right">
+                                                <a href="http://his.sliit.lk/OPD/index.php/patient_c/edit/6"
+                                                   class="btn-xs btn-primary pull-right"> <i class="fa fa-edit"></i>
+                                                    Edit
+                                                </a>
+                                                <br>
+
+                                            </div>
+                                            <h4>
+                                                <br>
+
+
+                                            </h4>
+                                            <table>
+
+                                                <tbody>
+                                                <tr style="padding-top: 40px">
+                                                    <td><strong>Blood Group </strong></td>
+                                                    <td style="padding-left: 25px ">
+                                                        <font color="red">
+
+                                                            <font color="red">Not Availabe</font>
+
+                                                        </font>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>BMI </strong></td>
+                                                    <td style="padding-left: 25px ">
+                                                        <font color="red">
+                                                            <font color="red">Not Calculated</font> </font>
+                                                    </td>
+
+
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Resent Allergies </strong></td>
+                                                    <td style="padding-left: 25px ">
+
+                                                        peanut,
+                                                    </td>
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <button class="btn btn-app"   ng-click="go('/AddToQueue');setToQueue(patient)"
+                                           style="color:limegreen;margin-top:40px;;margin-left:200px;" >
+                                            <i class="fa fa-edit" ></i> Add To Queue
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                </div>
+
+
+            </div>
+            <!-- ./row -->
+
+            <div class="col-md-6">
+                <div class="box box-solid box-default collapsed-box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Allergies</h3>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-box-tool" onclick="disabledaln()" data-widget="collapse"><i
+                                    class="fa fa-plus"></i></button>
+                        </div><!-- /.box-tools -->
+
+
+                        <span class="badge badge-notify pull-right" id="allergyn"></span>
+
+
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+                        <br>
+                        <div id="tabletestp_wrapper" class="dataTables_wrapper no-footer">
+                            <div class="dataTables_length" id="tabletestp_length"><label>Show <select
+                                    name="tabletestp_length" aria-controls="tabletestp" class="">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select> entries</label></div>
+                            <div id="tabletestp_filter" class="dataTables_filter"><label>Search:<input type="search"
+                                                                                                       class=""
+                                                                                                       placeholder=""
+                                                                                                       aria-controls="tabletestp"></label>
+                            </div>
+                            <table class="table table-bordered table-striped table-hover dataTable no-footer"
+                                   id="tabletestp" role="grid" aria-describedby="tabletestp_info">
+
+                                <thead>
+                                <tr role="row">
+                                    <th width="25px" class="sorting_asc" tabindex="0" aria-controls="tabletestp"
+                                        rowspan="1" colspan="1" aria-sort="ascending"
+                                        aria-label="#: activate to sort column descending" style="width: 25px;">#
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="tabletestp" rowspan="1" colspan="1"
+                                        aria-label="Allergy: activate to sort column ascending" style="width: 0px;">
+                                        Allergy
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="tabletestp" rowspan="1" colspan="1"
+                                        aria-label="Status: activate to sort column ascending" style="width: 0px;">
+                                        Status
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="tabletestp" rowspan="1" colspan="1"
+                                        aria-label="Remarks: activate to sort column ascending" style="width: 0px;">
+                                        Remarks
+                                    </th>
+                                </tr>
+
+                                </thead>
+                                <tbody>
+
+                                <tr role="row" class="odd">
+                                    <td class="sorting_1">1</td>
+
+                                    <td>peanut</td>
+                                    <td>Past</td>
+
+                                    <td></td>
+
+                                    <!-- <td><button type="submit" class="btn-xs btn-primary">
+                                        <a style="color: white"
+                                        href="http://his.sliit.lk/OPD/index.php/allergies_c/edit/6/26">Edit</a>
+                                    </button></td> -->
+                                </tr>
+                                </tbody>
+
+                            </table>
+                            <div class="dataTables_info" id="tabletestp_info" role="status" aria-live="polite">Showing 1
+                                to 1 of 1 entries
+                            </div>
+                            <div class="dataTables_paginate paging_simple_numbers" id="tabletestp_paginate"><a
+                                    class="paginate_button previous disabled" aria-controls="tabletestp" data-dt-idx="0"
+                                    tabindex="0" id="tabletestp_previous">Previous</a><span><a
+                                    class="paginate_button current" aria-controls="tabletestp" data-dt-idx="1"
+                                    tabindex="0">1</a></span><a class="paginate_button next disabled"
+                                                                aria-controls="tabletestp" data-dt-idx="2" tabindex="0"
+                                                                id="tabletestp_next">Next</a></div>
+                        </div>
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+            </div><!-- /.col -->
+
+
+            <!-- Message for last checkIN status  ************************************************************** -->
+            <!-- **************************************************************************************** -->
+
+        </div>
+
+    </div>
+
+</div>

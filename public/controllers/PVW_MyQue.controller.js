@@ -67,7 +67,7 @@ myOPDApp.controller('MyQueueCtrl', ['$scope', '$location','$window','AddToQueueM
     }
 
     $scope.showMoreDetail=function (patient) {
-        //AddToQueueMessageService.set('patient',patient);
+        AddToQueueMessageService.setData(patient);
 
     }
 }]);
