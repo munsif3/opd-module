@@ -13,7 +13,7 @@ mainApp.config(['$routeProvider', '$locationProvider',
 
             .when('/login', {
                 templateUrl: 'views/login.html',
-                controller: 'UserController'
+                controller: 'AuthController'
             })
 
             .when('/home', {

@@ -2,5 +2,6 @@
 
 var mainApp = angular.module('MainApp', [
     'ngRoute',
-    'UserApp'
+    'UserApp',
+    'AuthApp'
 ]);
