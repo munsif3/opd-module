@@ -14,7 +14,7 @@ pvsModule.config(function($routeProvider){
 
         .when('/laboratory',{
             templateUrl: 'views/pvs-laboratory.html',
-            controller: 'OpdController'
+            controller: 'OLabController'
         })
 
         .when('/diagnose',{

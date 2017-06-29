@@ -12,6 +12,7 @@ pvsModule.controller('OLabController', ['$scope', '$location', 'OLabService',
         //
         // getPatientVisit();
 
+        //get lab test req
         console.log('from controller');
         $scope.getPatientLaboratory = function () {
             OLabService.get().then(patientLaboratory => {
@@ -24,6 +25,7 @@ pvsModule.controller('OLabController', ['$scope', '$location', 'OLabService',
          $location.path('/addPatientVisit');
          }*/
 
+        //add lab req
         $scope.addPatientLaboratory = (patientLaboratory) =>{
             console.log(patientLaboratory);
             OLabService.post(patientLaboratory).then(addedPatientLaboratory=>{
