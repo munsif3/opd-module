@@ -11,7 +11,8 @@ userApp.factory('AuthService', ['$http', '$timeout',
             $timeout(function () {
 
                 var response = {success: credentials.username === 'test' && credentials.password === 'test'};
-                if (credentials.username == 'test' && credentials.password == 'test') {
+
+                if (credentials.username === 'test' && credentials.password === 'test') {
                     console.log('in');
                     response.status = 200;
                 }
@@ -22,6 +23,8 @@ userApp.factory('AuthService', ['$http', '$timeout',
                 callback(response);
             }, 1000);
         };
+
+        // setUser()
 
         return {
             // get: () => $http.get('http://localhost:8081/users').then(response => response.data),

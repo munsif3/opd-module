@@ -1,0 +1,110 @@
+<section class="content-header">
+    <h1>
+        Questionnaire
+        <small> View Questionnaire</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-th-list"></i> Questionnaire</a></li>
+        <li class="active">View Questionnaire
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+    </ol>
+</section>
+
+<section class="content">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-body">
+                    <br>
+                    <div id="tabletestp_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="dataTables_length" id="tabletestp_length"><label>Show <select
+                                        name="tabletestp_length" aria-controls="tabletestp"
+                                        class="form-control input-sm">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select> entries</label></div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div id="tabletestp_filter" class="dataTables_filter"><label>Search:
+                                    <input type="search"
+                                           class="form-control input-sm"
+                                           placeholder=""
+                                           aria-controls="tabletestp"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table class="table table-bordered table-striped table-hover dataTable no-footer"
+                                       id="tabletestp" role="grid" aria-describedby="tabletestp_info">
+
+                                    <thead>
+                                    <tr role="row">
+                                        <th width="25px" class="sorting_asc" tabindex="0" aria-controls="tabletestp"
+                                            rowspan="1" colspan="1" aria-sort="ascending"
+                                            aria-label="#: activate to sort column descending" style="width: 24px;">#
+                                        </th>
+
+                                    </tr>
+
+                                    </thead>
+                                    <tbody>
+
+
+                                    <tr onclick="window.location='http://his.sliit.lk/OPD/index.php/questionnaire_c/edit/1/true'"
+                                        role="row" class="odd">
+                                        <td class="sorting_1">1</td>
+                                        <td id="tdname">opdquestion</td>
+                                        <td id="tdtype">opd</td>
+                                        <td id="tdremarks">opdquestionnaire</td>
+                                    </tr>
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <div class="dataTables_info" id="tabletestp_info" role="status" aria-live="polite">
+                                    Showing 1 to 10 of 18 entries
+                                </div>
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="dataTables_paginate paging_simple_numbers" id="tabletestp_paginate">
+                                    <ul class="pagination">
+                                        <li class="paginate_button previous disabled" id="tabletestp_previous"><a
+                                                href="#" aria-controls="tabletestp" data-dt-idx="0" tabindex="0">Previous</a>
+                                        </li>
+                                        <li class="paginate_button active"><a href="#" aria-controls="tabletestp"
+                                                                              data-dt-idx="1" tabindex="0">1</a></li>
+                                        <li class="paginate_button "><a href="#" aria-controls="tabletestp"
+                                                                        data-dt-idx="2" tabindex="0">2</a></li>
+                                        <li class="paginate_button next" id="tabletestp_next"><a href="#"
+                                                                                                 aria-controls="tabletestp"
+                                                                                                 data-dt-idx="3"
+                                                                                                 tabindex="0">Next</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+    <br>
+
+
+</section>

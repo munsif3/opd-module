@@ -14,9 +14,13 @@ app.use('/app', express.static(__dirname + '/public'));
 app.use('/app/mods', express.static(__dirname + '/bower_components'));
 
 // Returning for Root Request
-app.get('*', function (req, res) {
-    res.sendFile(__dirname + '/public/index.html');
+app.get('/', function (req, res) {
+    res.sendFile(__dirname + '/public/admin.home.html');
 });
+
+// app.get('/admin/home', function (req, res) {
+//     res.sendFile(__dirname + '/public/admin.home.html');
+// });
 
 // Create Server and Listen
 app.listen(port, err => {

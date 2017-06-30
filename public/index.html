@@ -36,6 +36,20 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+        div[ng-app] {
+            margin: 10px;
+        }
+
+        .table {
+            width: 100%
+        }
+
+        form[editable-form] > div {
+            margin: 10px 0;
+        }
+    </style>
+
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -232,8 +246,10 @@ desired effect
             </div>
         </nav>
     </header>
+
     <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
+
+    <aside class="main-sidebar" ng-controller="AuthController">
 
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
@@ -267,8 +283,26 @@ desired effect
                 <li class="header">MAIN NAVIGATION</li>
                 <!-- Optionally, you can add icons to the links -->
                 <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-                <li><a href="#"><i class="fa fa-stethoscope"></i> <span>My OPD Patients</span></a></li>
+
+                <!--This is just for demo-->
+                <!-- <li><a href="#!prescription"><i class="fa fa-stethoscope"></i> <span>Prescription</span></a></li>-->
+
+                <li class="treeview">
+                    <a href=""><i class="fa fa-th-list"></i> <span>My Patients</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#!visitList"><i class="fa fa-circle-o"></i> Patients List</a></li>
+                        <li><a href="#!diagnose"><i class="fa fa-circle-o"></i> Patient Visit</a></li>
+                        <li><a href="#!prescription"><i class="fa fa-circle-o"></i> Prescription</a></li>
+                        <li><a href="#!laboratory"><i class="fa fa-circle-o"></i> Laboratory Request</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="#"><i class="fa fa-sort-amount-asc"></i> <span>My Queue</span></a></li>
+
                 <li class="treeview">
                     <a href="#"><i class="fa fa-th-list"></i> <span>Questionnaire</span>
                         <span class="pull-right-container">
@@ -276,8 +310,8 @@ desired effect
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Add Questionnaire</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> View Questionnaire</a></li>
+                        <li><a href="#!question/add"><i class="fa fa-circle-o"></i> Add Questionnaire</a></li>
+                        <li><a href="#!question/view"><i class="fa fa-circle-o"></i> View Questionnaire</a></li>
                     </ul>
                 </li>
             </ul>
@@ -287,24 +321,8 @@ desired effect
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                Dashboard
-                <small>Dashboard of the Doctor</small>
-            </h1>
+    <div class="content-wrapper" ng-view>
 
-        </section>
-
-        <!-- Main content -->
-        <section class="content" ng-view>
-
-
-            <!-- Your Page Content Here -->
-
-        </section>
-        <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 
@@ -425,10 +443,10 @@ desired effect
 <!--3. Controllers-->
 <script src="controllers/user.controller.js"></script>
 <script src="controllers/authentication.controller.js"></script>
+<script src="controllers/dashboard.controller.js"></script>
 <!--4. Services-->
 <script src="services/user.services.js"></script>
 <script src="services/authentication.service.js"></script>
-
 
 
 </body>
