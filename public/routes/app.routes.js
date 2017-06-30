@@ -40,11 +40,14 @@ var mainApp = angular.module('MainApp');
 //     }
 // ]);
 
-mainApp.config(function ($stateProvider, $urlRouterProvider) {
+mainApp.config(function ($stateProvider, $urlRouterProvider, $qProvider) {
+    $qProvider.errorOnUnhandledRejections(false);
     $urlRouterProvider.when('', '/login');
     $urlRouterProvider.when('/', '/login');
     $urlRouterProvider.when('/home', '/home');
-    $urlRouterProvider.when('/dashboard', 'dashboard');
+    $urlRouterProvider.when('/dashboard/admin', 'dashboard-admin');
+    $urlRouterProvider.when('/dashboard/nurse', 'dashboard-nurse');
+    $urlRouterProvider.when('/dashboard/doctor', 'dashboard-doctor');
     $urlRouterProvider.otherwise('/login');
 
     $stateProvider
@@ -54,10 +57,22 @@ mainApp.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'AuthController'
         })
 
-        .state('dashboard', {
-            url: '/dashboard',
+        .state('dashboard-admin', {
+            url: '/dashboard/admin',
             controller: 'DashboardController',
-            templateUrl: 'views/db-home.html'
+            templateUrl: 'views/db-admin.home.html'
+        })
+
+        .state('dashboard-doctor', {
+            url: '/dashboard/doctor',
+            controller: 'DashboardController',
+            templateUrl: 'views/db-doctor.home.html'
+        })
+
+        .state('dashboard-nurse', {
+            url: '/dashboard/nurse',
+            controller: 'DashboardController',
+            templateUrl: 'views/db-nurse.home.html'
         })
 
         .state('dashboard.users-view', {

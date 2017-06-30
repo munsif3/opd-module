@@ -1,5 +1,5 @@
 <!--Header-->
-<div ng-include="'views/main-header.html'" ></div>
+<div ng-include="'views/main-header.html'"></div>
 
 <!-- Left side column. contains the logo and sidebar -->
 <aside class="main-sidebar">
@@ -21,16 +21,25 @@
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-
+            <li class="navsidebar">
+                <a href=""> <i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+            </li>
+            <li class="navsidebar">
+                <a href=""> <i class="fa fa-male"></i> <span>New Patients</span></a>
+            </li>
+            <li class="navsidebar">
+                <a href=""> <i class="fa fa-search"></i> <span>Search</span></a>
+            </li>
+            <li class="navsidebar">
+                <a href=""> <i class="fa fa-book"></i> <span>Reports</span></a>
+            </li>
             <li class="treeview">
-                <a href=""><i class="fa fa-th-list"></i> <span>Users</span>
-                    <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
+                <a href=""> <i class="fa fa-th-list"></i> <span>Procedure Room</span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a ui-sref="dashboard.users-view"><i class="fa fa-circle-o"></i>View Users</a></li>
-                    <li><a ui-sref="dashboard.users-add"><i class="fa fa-circle-o"></i>Add Users</a></li>
+                    <li class="navsidebar"><a href=""><i class="fa fa-circle-o"></i>Treatment Room</a></li>
+                    <li class="navsidebar"><a href=""><i class="fa fa-circle-o"></i>Injection Room</a></li>
                 </ul>
             </li>
         </ul>
@@ -41,8 +50,9 @@
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper" ui-view>
+
 </div>
 <!-- /.content-wrapper -->
 
 <!--Footer-->
-<div ng-include="'views/main-footer.html'" ></div>
+<div ng-include="'views/main-footer.html'"></div>

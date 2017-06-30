@@ -1,14 +1,14 @@
 <section class="content-header">
     <h1>
         Users
-        <small>Add Users</small>
+        <small>Update Users</small>
     </h1>
 </section>
 
 <section class="content">
     <div class="row ">
         <div class="col-xs-10">
-            <form class="form" ng-controller="UserController" ng-init="" ng-submit="addUser(user)">
+            <form class="form" ng-controller="UserController"  ng-submit="addUser(user)">
                 <div class="form-group">
                     <label for="firstName">First Name:</label>
                     <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" ng-model="user.firstName">
@@ -17,13 +17,9 @@
                     <label for="lastName">Last Name:</label>
                     <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" ng-model="user.lastName">
                 </div>
-                <!--<div class="form-group">-->
-                <!--<label for="role">User Role:</label>-->
-                <!--<input type="text" class="form-control" id="role" placeholder="Enter Role">-->
-                <!--</div>-->
                 <div class="form-group">
                     <label for="role">User Role:</label>
-                    <select ng-required="true" class="form-control" id="role" ng-model="user.role">
+                    <select ng-required="true" class="form-control" id="role" ng-model-options="user.role" >
                         <option value="">Select Role</option>
                         <option value="Doctor">Doctor</option>
                         <option value="Nurse">Nurse</option>

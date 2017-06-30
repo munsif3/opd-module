@@ -21,6 +21,12 @@ userApp.controller('UserController', ['$scope', 'UserService', '$filter', '$loca
 
         getUserById();
 
+        // $scope.getUserById = () => {
+        //     UserService.getById($stateParams.userId).then(user => {
+        //         $scope.user = user;
+        //     })
+        // };
+
         $scope.addUser = (user) => {
             console.log(user);
             UserService.post(user).then(user => {
@@ -29,8 +35,8 @@ userApp.controller('UserController', ['$scope', 'UserService', '$filter', '$loca
             })
         }
 
-        $scope.goToUser = (userId) => {
-            $state.go('dashboard.users-view-one', {userId: userId});
-        }
+        // $scope.goToUser = (user) => {
+        //     $state.go('dashboard.users-view-one', {user: user._id});
+        // }
     }
 ]);

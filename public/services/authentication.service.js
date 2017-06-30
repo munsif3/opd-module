@@ -4,24 +4,34 @@ var authApp = angular.module('AuthApp');
 
 userApp.factory('AuthService', ['$http', '$timeout',
     function ($http, $timeout) {
+
         const service = {};
 
         service.loginUser = function (credentials, callback) {
 
             $timeout(function () {
 
-                var response = {success: credentials.username === 'test' && credentials.password === 'test'};
+                    var response = [
+                        {success: credentials.username === 'munsif1' && credentials.password === 'munsif1' && credentials.role === 'Administrator'},
+                        {success: credentials.username === 'munsif2' && credentials.password === 'munsif2' && credentials.role === 'Doctor'},
+                        {success: credentials.username === 'munsif3' && credentials.password === 'munsif3' && credentials.role === 'Nurse'}];
 
-                if (credentials.username === 'test' && credentials.password === 'test') {
-                    console.log('in');
-                    response.status = 200;
-                }
+                    
+                    console.log(response);
 
-                if (!response.success) {
-                    response.message = 'Username or password is incorrect';
-                }
-                callback(response);
-            }, 1000);
+                    if (credentials == response) {
+                        console.log('in');
+                        console.log(credentials);
+                        response.status = 200;
+                    }
+
+                    if (!response.success) {
+                        response.message = 'Username or password is incorrect';
+                    }
+                    callback(response);
+                },
+                1000
+            );
         };
 
         // setUser()

@@ -14,7 +14,7 @@
                     <div class="box-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
                             <input type="text" name="table_search" class="form-control pull-right"
-                                   placeholder="Search">
+                                   placeholder="Search" ng-model="searchUser">
 
                             <div class="input-group-btn">
                                 <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
@@ -33,8 +33,9 @@
                             <th>Role</th>
                             <th>UserID</th>
                         </tr>
-                        <tr ng-controller="UserController" ng-repeat="user in users" ng-click="goToUser(user._id)">
-                            <td>1</td>
+                        <tr ng-controller="UserController" ng-repeat="user in users | filter:searchUser"
+                            ui-sref="dashboard.users-view-one({userId: user._id})">
+                            <td>{{$index+1}}</td>
                             <td>{{user.username}}</td>
                             <td>{{user.password}}</td>
                             <td>{{user.role}}</td>
