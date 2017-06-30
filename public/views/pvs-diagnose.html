@@ -1,0 +1,163 @@
+<div>
+
+    <h1>
+        Patient Visit
+        <small>Preview</small>
+    </h1>
+
+    <!--Patient Profile-->
+    <div class="well profile">
+        <div class="box-header with-border">
+            <i class="fa  fa-wheelchair"></i>
+            <h3 class="box-title">Patient Profile</h3>
+           <!-- <a href="http://his.sliit.lk/OPD/index.php/patient_c/edit/1" class="btn btn-app pull-right"> <i class="fa fa-edit"></i> Edit
+            </a>-->
+        </div>
+        <div class="col-sm-12">
+            <div class="col-xs-12 col-sm-8">
+                <h2>Mr.Tom Milton </h2>
+                <table>
+                    <tbody><tr>
+                        <td style="padding-right: 40px"><strong>HIN</strong></td>
+                        <td style="padding-left: 10px">
+                            HIN01</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Gender</strong></td>
+                        <td style="padding-left: 10px">
+                            Male</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 90px"><strong>Civil Status</strong></td>
+                        <td style="padding-left: 10px">
+                            Single</td>
+
+                    </tr>
+                    <tr>
+                        <td style="width: 50px"><strong>Date of Birth</strong></td>
+                        <td style="padding-left: 10px">
+                            1995-08-19</td>
+                    </tr>
+
+                    </tbody></table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="pull-right col-xs-12 col-sm-4 emphasis"></div>
+        </div>
+    </div>
+
+    <!--Patient visit-->
+    <div>
+
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Patient Visit Details</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+                <div class="box-body">
+
+                    <div class="form-group">
+                        <label for="exampleInputComplaintInjury">Complaints/Injury</label>
+                        <input type="text" class="form-control" id="exampleInputComplaintInjury" placeholder="Complaints/Injury" ng-model="patientDiagnosis.complaint">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Visit type</label>
+                        <select class="form-control" ng-model="patientDiagnosis.visitType">
+                            <option value="select">Select Visit Type</option>
+                            <option value="opd">OPD</option>
+                            <option value="clinic">Clinic</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputRemarks">Remarks</label>
+                        <input type="text" class="form-control" id="exampleInputRemarks" placeholder="Remarks" ng-model="patientDiagnosis.remarks">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date:</label>
+
+                        <div class="input-group date">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="datepicker" ng-model="patientDiagnosis.visitDate"/>
+                        </div>
+                        <!-- /.input group -->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputDoctor">Doctor</label>
+                        <input type="text" class="form-control" id="exampleInputDoctor" placeholder="Doctor" ng-model="patientDiagnosis.doctor"/>
+                    </div>
+
+                </div>
+                <!-- /.box-body -->
+
+
+            </form>
+        </div>
+
+
+    </div>
+
+    <!--Patient examination details-->
+    <div>
+
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Patient Examination Details</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+                <div class="box-body">
+
+
+                    <div class="form-group">
+                        <label for="exampleInputWeigth">Weigth (Kg)</label>
+                        <input type="text" class="form-control" id="exampleInputWeigth" placeholder="Weigth" ng-model="patientDiagnosis.weight">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputHeight">Height (cm)</label>
+                        <input type="text" class="form-control" id="exampleInputHeight" placeholder="Heigth" ng-model="patientDiagnosis.heigth">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputSysBp">SysBp</label>
+                        <input type="text" class="form-control" id="exampleInputSysBp" placeholder="SysBp" ng-model="patientDiagnosis.sysbp">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputDiastBp">DiastBp</label>
+                        <input type="text" class="form-control" id="exampleInputDiastBp" placeholder="DiastBp" ng-model="patientDiagnosis.diastbp">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputTemperature">Temperature(℉)</label>
+                        <input type="text" class="form-control" id="exampleInputTemperature" placeholder="Temperature" ng-model="patientDiagnosis.temperature">
+                    </div>
+                </div>
+                <!-- /.box-body -->
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary" ng-click="addPatientVisit(patientDiagnosis)" >Submit</button>
+
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
