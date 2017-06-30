@@ -1,0 +1,61 @@
+<div class="hold-transition login-page jumbotron">
+    <div class="login-box">
+        <div class="login-logo">
+            <img src="assets/dist/img/opd.png" alt="OPD Module" width="128" height="128">
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            <form ng-controller="AuthController" ng-submit="login(credentials)">
+
+                <div class="form-group has-feedback form-group">
+                    <input id="user" type="text" class="form-control" placeholder="Username"
+                           ng-model="credentials.username">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+
+                <div class="form-group has-feedback form-group">
+                    <input id="pwd" type="password" class="form-control" placeholder="Password"
+                           ng-model="credentials.password">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+
+                    <div class="form-group">
+                        <div class="radio ">
+                            <label>
+                                <input type="radio" name="role" id="Doctor" value="Doctor" ng-model="credentials.role">
+                                Doctor
+                            </label>
+                        </div>
+                        <div class="radio ">
+                            <label>
+                                <input type="radio" name="role" id="Nurse" value="Nurse" ng-model="credentials.role">
+                                Nurse
+                            </label>
+                        </div>
+                        <div class="radio ">
+                            <label>
+                                <input type="radio" name="role" id="Administrator" value="Administrator" ng-model="credentials.role">
+                                Administrator
+                            </label>
+                        </div>
+                    </div>
+
+                <div class="row">
+                    <!-- /.col -->
+                    <br>
+                    <div class="col-xs-12">
+                        <!--<a href="views/index.html" class="btn btn-warning btn-block btn-flat">Sign In</a>-->
+                        <!--<button type="button" class="btn btn-warning btn-block btn-flat" onclick="loginUser()">Sign In-->
+                        <!--</button>-->
+                        <button class="btn btn-warning btn-lg center-block" type="submit">Login</button>
+                    </div>
+                    <!-- /.col -->
+                    <br><br>
+                </div>
+            </form>
+            <!--<a href="views/db-register-form.html" class="text-center">Register Account</a>-->
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+    <!-- /.login-box -->
+</div>

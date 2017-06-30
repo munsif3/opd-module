@@ -1,7 +1,8 @@
 'use strict';
 
 var mainApp = angular.module('MainApp', [
-    'ngRoute',
+    // 'ngRoute',
+    'ui.router',
     'UserApp',
     'AuthApp'
 ]);

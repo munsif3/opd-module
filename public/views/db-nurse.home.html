@@ -1,0 +1,58 @@
+<!--Header-->
+<div ng-include="'views/main-header.html'"></div>
+
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+
+    <section class="sidebar">
+
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="assets/dist/img/user1-128x128.jpg" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>Administrator</p>
+                <!-- Status -->
+                <a href=""><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu">
+            <li class="header">MAIN NAVIGATION</li>
+            <li class="navsidebar">
+                <a href=""> <i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+            </li>
+            <li class="navsidebar">
+                <a href=""> <i class="fa fa-male"></i> <span>New Patients</span></a>
+            </li>
+            <li class="navsidebar">
+                <a href=""> <i class="fa fa-search"></i> <span>Search</span></a>
+            </li>
+            <li class="navsidebar">
+                <a href=""> <i class="fa fa-book"></i> <span>Reports</span></a>
+            </li>
+            <li class="treeview">
+                <a href=""> <i class="fa fa-th-list"></i> <span>Procedure Room</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="navsidebar"><a href=""><i class="fa fa-circle-o"></i>Treatment Room</a></li>
+                    <li class="navsidebar"><a href=""><i class="fa fa-circle-o"></i>Injection Room</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+</aside>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper" ui-view>
+
+</div>
+<!-- /.content-wrapper -->
+
+<!--Footer-->
+<div ng-include="'views/main-footer.html'"></div>
