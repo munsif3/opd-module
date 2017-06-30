@@ -2,6 +2,7 @@
 
 var mainApp = angular.module('MainApp');
 
+<<<<<<< HEAD
 /*mainApp.config(['$routeProvider', '$locationProvider',
  function ($routeProvider, $locationProvider) {
  $routeProvider
@@ -88,3 +89,26 @@ mainApp.config(function ($stateProvider, $urlRouterProvider, $qProvider) {
         })
 
 });
+=======
+mainApp.config(['$routeProvider', '$locationProvider',
+    function ($routeProvider, $locationProvider) {
+        $routeProvider
+
+            .when('/', {
+                templateUrl: 'views/login.html',
+                controller: 'UserController'
+            })
+
+            .when('/login', {
+                templateUrl: 'views/login.html',
+                controller: 'AuthController'
+            })
+
+            .when('/home', {
+                templateUrl: 'views/home.html',
+                controller: 'UserController'
+            })
+
+    }
+]);
+>>>>>>> master
