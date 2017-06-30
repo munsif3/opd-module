@@ -4,5 +4,6 @@ var mainApp = angular.module('MainApp', [
     'ngRoute',
     'UserApp',
     'AuthApp',
-    'pvsApp'
+    'pvsApp',
+    'ui.router'
 ]);

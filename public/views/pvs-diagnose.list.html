@@ -1,0 +1,150 @@
+< ng-controller="OpdController"  ng-init="getPatientVisit()">
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title">OPD Patient List</h3>
+    </div>
+    <form role="form">
+        <div class="box-body">
+
+            <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="dataTables_length" id="example1_length"><label>Show <select
+                                name="example1_length" aria-controls="example1"
+                                class="form-control input-sm">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select> entries</label></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div id="example1_filter" class="dataTables_filter"><label>Search:<input
+                                type="search" class="form-control input-sm" placeholder="Search By HIN"
+                                aria-controls="example1" ng-model="searchText"></label></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="example1" class="table table-bordered table-striped dataTable"
+                               role="grid" aria-describedby="example1_info">
+                            <thead>
+                            <tr role="row">
+                                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
+                                    colspan="1" aria-sort="ascending"
+                                    aria-label="No: activate to sort column descending"
+                                    style="width: 177px;">No
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                    colspan="1" aria-label="HIN: activate to sort column ascending"
+                                    style="width: 224px;">HIN
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                    colspan="1" aria-label="Name: activate to sort column ascending"
+                                    style="width: 205px;">Name
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                    colspan="1"
+                                    aria-label="Visit Date: activate to sort column ascending"
+                                    style="width: 152px;">Visit Date
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                    colspan="1" aria-label="Complaint: activate to sort column ascending"
+                                    style="width: 110px;">Complaint
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                    colspan="1" aria-label="VisitType: activate to sort column ascending"
+                                    style="width: 110px;">Visit Type
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                    colspan="1" aria-label="Remarks: activate to sort column ascending"
+                                    style="width: 110px;">Remarks
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                    colspan="1" aria-label="Doctor: activate to sort column ascending"
+                                    style="width: 110px;">Doctor
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                    colspan="1" aria-label="Weight: activate to sort column ascending"
+                                    style="width: 110px;">Weight
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                    colspan="1" aria-label="Height: activate to sort column ascending"
+                                    style="width: 110px;">Height
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                    colspan="1" aria-label="sysbp: activate to sort column ascending"
+                                    style="width: 110px;">sysbp
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                    colspan="1" aria-label="diastbp: activate to sort column ascending"
+                                    style="width: 110px;">diastbp
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                    colspan="1" aria-label="Temperature: activate to sort column ascending"
+                                    style="width: 110px;">Temperature
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr role="row" class="odd" ng-repeat="patient in patientDiagnosis | filter:searchText">
+                                <td class="sorting_1">{{$index +1}}</td>
+                                <td>{{patient.diagnoseId}}</td>
+                                <td>{{patient.name}}</td>
+                                <td>{{patient.visitDate}}</td>
+                                <td>{{patient.complaint}}</td>
+                                <td>{{patient.visitType}}</td>
+                                <td>{{patient.remarks}}</td>
+                                <td>{{patient.doctor}}</td>
+                                <td>{{patient.weight}}</td>
+                                <td>{{patient.height}}</td>
+                                <td>{{patient.sysbp}}</td>
+                                <td>{{patient.diastbp}}</td>
+                                <td>{{patient.Temperature}}</td>
+                            </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="dataTables_info" id="example1_info" role="status" aria-live="polite">
+                            Showing 1 to 10 of 57 entries
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
+                            <ul class="pagination">
+                                <li class="paginate_button previous disabled" id="example1_previous"><a
+                                        href="#" aria-controls="example1" data-dt-idx="0" tabindex="0">Previous</a>
+                                </li>
+                                <li class="paginate_button active"><a href="#!visitList" aria-controls="example1"
+                                                                      data-dt-idx="1" tabindex="0">1</a>
+                                </li>
+                                <li class="paginate_button "><a href="#" aria-controls="example1"
+                                                                data-dt-idx="2" tabindex="0">2</a></li>
+                                <li class="paginate_button "><a href="#" aria-controls="example1"
+                                                                data-dt-idx="3" tabindex="0">3</a></li>
+                                <li class="paginate_button "><a href="#" aria-controls="example1"
+                                                                data-dt-idx="4" tabindex="0">4</a></li>
+                                <li class="paginate_button "><a href="#" aria-controls="example1"
+                                                                data-dt-idx="5" tabindex="0">5</a></li>
+                                <li class="paginate_button "><a href="#" aria-controls="example1"
+                                                                data-dt-idx="6" tabindex="0">6</a></li>
+                                <li class="paginate_button next" id="example1_next"><a href="#"
+                                                                                       aria-controls="example1"
+                                                                                       data-dt-idx="7"
+                                                                                       tabindex="0">Next</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.box-body -->
+    </form>
+</div>
+</div>

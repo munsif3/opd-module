@@ -1,5 +1,4 @@
 'use strict';
-
 var pvsModule = angular.module('pvsApp');
 
 pvsModule.controller('OController', ['$scope', '$location', 'OService',
@@ -11,17 +10,19 @@ pvsModule.controller('OController', ['$scope', '$location', 'OService',
         // }
         //
         // getPatientVisit();
-
-        console.log('from controller');
+j
+        //console.log('from controller');
         $scope.getPatient = function () {
             OService.get().then(patientVi => {
                 $scope.patientVi = patientVi;
             })
         };
 
-        /*$scope.goToAdd = () =>{
-         $location.path('/addPatientVisit');
-         }*/
+
+        $scope.goToDiagnosis = (patientId) =>{
+         // $location.path('/');
+        $state.go('visitList.diagnose', {patientId:patientId}) ;
+        }
 
 
     }]);

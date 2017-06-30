@@ -1,4 +1,4 @@
-<div>
+<div ng-controller="OPrescriptionController">
     <h1>
         Prescription
         <small>Preview</small>
@@ -14,17 +14,17 @@
 
                 <div class="form-group">
                     <label for="exampleInputPatientId">Patient ID</label>
-                    <input type="text" class="form-control" id="exampleInputPatientId" placeholder="Patient ID">
+                    <input type="text" class="form-control" id="exampleInputPatientId" placeholder="Patient ID" ng-model="patientPrescription.patientId">
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputPatientName">Patient Name</label>
-                    <input type="text" class="form-control" id="exampleInputPatientName" placeholder="Patient Name">
+                    <input type="text" class="form-control" id="exampleInputPatientName" placeholder="Patient Name" ng-model="patientPrescription.patientName">
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputDoctor">Prescribed Physician</label>
-                    <input type="text" class="form-control" id="exampleInputDoctor" placeholder="Prescribed Physician">
+                    <input type="text" class="form-control" id="exampleInputDoctor" placeholder="Prescribed Physician" ng-model="patientPrescription.prescribedPhysician">
                 </div>
 
                 <div class="form-group">
@@ -34,37 +34,41 @@
                         <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="text" class="form-control pull-right" id="datepicker">
+                        <input type="text" class="form-control pull-right" id="datepicker" ng-model="patientPrescription.date">
                     </div>
                     <!-- /.input group -->
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputMedicineName">Name of Medicine</label>
-                    <input type="text" class="form-control" id="exampleInputMedicineName" placeholder="Name of Medicine">
+                    <input type="text" class="form-control" id="exampleInputMedicineName" placeholder="Name of Medicine" ng-model="patientPrescription.nameOfMedicine">
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputStrength">Strength</label>
-                    <input type="text" class="form-control" id="exampleInputStrength" placeholder="Strength">
+                    <label>Strength</label>
+                    <select class="form-control" ng-model="patientPrescription.strength">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputFrequency">Frequency</label>
-                    <input type="text" class="form-control" id="exampleInputFrequency" placeholder="Frequency">
+                    <input type="text" class="form-control" id="exampleInputFrequency" placeholder="Frequency" ng-model="patientPrescription.frequency">
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputDuration">Duration</label>
-                    <input type="text" class="form-control" id="exampleInputDuration" placeholder="Duration">
+                    <input type="text" class="form-control" id="exampleInputDuration" placeholder="Duration" ng-model="patientPrescription.duration">
                 </div>
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-default">Clear</button>
 
                     <button type="submit" class="btn btn-info pull-right">Delete</button>
-                    <button type="submit" class="btn btn-info pull-right">Edit</button>
-                    <button type="submit" class="btn btn-info pull-right">Add</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="getPatientPres()">Edit</button>
+                    <button type="submit" class="btn btn-info pull-right" ng-click="addPatientPres(patientPrescription)">Add</button>
                 </div>
 
 
@@ -74,6 +78,9 @@
                            aria-describedby="example2_info">
                         <thead>
                         <tr role="row">
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                aria-label="No: activate to sort column ascending">No
+                            </th>
                             <th class="sorting_desc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
                                 aria-label="Name of Medication: activate to sort column ascending"
                                 aria-sort="descending">Name of Medication
@@ -92,21 +99,12 @@
                         </thead>
 
                         <tbody>
-                        <tr role="row" class="odd">
-                            <td class="sorting_1">Webkit</td>
-                            <td>Safari 1.2</td>
-                            <td>OSX.3</td>
-                            <td>125.5</td>
-
-                        </tr>
-                        <tr role="row" class="even">
-                            <td class="sorting_1">Webkit</td>
-                            <td>Safari 1.3</td>
-                            <td>OSX.3</td>
-                            <td>312.8</td>
-
-                        </tr>
-
+                        <tr role="row" class="odd" ng-repeat="medicine in patientPrescription">
+                            <td class="sorting_1">{{$index+1}}</td>
+                            <td>{{medicine.nameOfMedicine}}</td>
+                            <td>{{medicine.strength}}</td>
+                            <td>{{medicine.frequency}}</td>
+                            <td>{{medicine.duration}}</td>
                         </tbody>
 
                     </table>
