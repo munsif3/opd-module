@@ -19,7 +19,7 @@
 
                             <td style="border-style:none;">
 
-                                <h4>{{queuePatient.title}}{{queuePatient.firstName}}{{queuePatient.lastName}}/ {{queuePatient.gender}} / {{queuePatient.age}} / {{queuePatient.status}} &nbsp;
+                                <h4>{{queuePatient.title}}{{queuePatient.firstName}}{{queuePatient.lastName}}/ {{queuePatient.gender}} / {{queuePatient.age}} / {{queuePatient.nic}}/ {{queuePatient.status}} &nbsp;
                                     &nbsp; &nbsp; &nbsp; &nbsp;
                                     &nbsp; &nbsp;    </h4> PatientID : {{queuePatient.id}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                 &nbsp;
@@ -105,6 +105,7 @@
                                 <thead>
                                 <tr>
                                     <th>Doctor</th>
+                                    <td>ID</td>
                                     <th>Patient Count</th>
                                     <th>Status</th>
                                 </tr>
@@ -113,6 +114,7 @@
 
                                 <tr ng-repeat="doctor in doctors">
                                     <td>{{doctor.doctorName}}</td>
+                                    <td>{{doctor.doctorid}}</td>
                                     <td>{{doctor.patientcount}}</td>
                                     <td>{{doctor.queueStatus}}</td>
                                 </tr>
@@ -126,7 +128,7 @@
                             <div class="form-actions">
 
                                 <button type="submit" class="btn btn-primary"
-                                        ng-click="go('/token');setToQueue(patient)">Add
+                                        ng-click="go('/token');setToQueue(patient);addToQueue('doc_1',patient.nic)">Add
                                 </button>
                                 <button type="reset" class="btn" onclick="history.go(-1);">Cancel</button>
                             </div>

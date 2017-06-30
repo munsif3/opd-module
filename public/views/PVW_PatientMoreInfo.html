@@ -81,6 +81,12 @@
                                                                         {{patient.address}}
                                                                     </td>
 
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><strong>nic </strong></td>
+                                                                    <td style="padding-left: 10px">
+                                                                        {{patient.nic}}
+                                                                    </td>
 
                                                                 </tr>
 
@@ -142,7 +148,7 @@
                                                                 </tbody>
                                                             </table>
                                                         </div>
-                                                        <button class="btn btn-app"   ng-click="go('/MyQueue');"
+                                                        <button class="btn btn-app"   ng-click="go('/MyQueue');checkout(patient.nic)"
                                                                 style="color:limegreen;margin-top:40px;;margin-left:200px;" >
                                                             <i class="fa fa-edit" ></i> Checkout
                                                         </button>
