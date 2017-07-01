@@ -1,0 +1,64 @@
+<div class="page-header">
+    <h2 style="text-align: center;">Patient Registration</h2>
+</div>
+
+<form ng-submit="register.regPatient(regData);">
+    <label> Title</label>&nbsp;&nbsp;
+    <input type="radio" name="title" ng-model="register.regData.title" value="Mr" autocomplete="off" checked> Mr &nbsp;&nbsp;
+    <input type="radio" name="title" ng-model="register.regData.title" value="Mrs" autocomplete="off"> Mrs &nbsp;&nbsp;
+    <input type="radio" name="title" ng-model="register.regData.title" value="Ms" autocomplete="off"> Ms &nbsp;&nbsp;
+    <input type="radio" name="title" ng-model="register.regData.title" value="Rev" autocomplete="off"> Rev &nbsp;&nbsp;
+    <br>
+    <br>
+
+    <label> First Name</label>
+    <input class="form-control" type="text" name="fname" placeholder="Enter First Name" required  ng-model="register.regData.firstName">
+    <br>
+
+    <label> Last Name</label>
+    <input class="form-control" type="text" name="lname" placeholder="Enter Last Name" required  ng-model="register.regData.lastName">
+    <br>
+
+    <label> NIC</label>
+    <input class="form-control" type="text" name="nic" placeholder="Enter NIC" required  ng-model="register.regData.nic">
+    <br>
+
+    <label> Date of Birth</label>
+    <input class="form-control" type="date" name="date"  required  ng-model="register.regData.dateOfBirth">
+    <br>
+
+    <label>Gender</label>&nbsp;&nbsp;
+            <input type="radio" name="gender" ng-model="register.regData.gender" value="male" autocomplete="off" checked> Male &nbsp;&nbsp;
+            <input type="radio" name="gender" ng-model="register.regData.gender" value="female"  autocomplete="off"> Female
+    <br>
+
+    <label> Address</label>
+    <input class="form-control" type="text" name="address" placeholder="Enter Address" required  ng-model="register.regData.address">
+    <br>
+
+    <label> Telephone No.</label>
+    <input class="form-control" type="text" name="telephoneNo" placeholder="Enter Telephone No" required  ng-model="register.regData.telephoneNo">
+    <br>
+
+    <label> Allergies</label>
+    <textarea class="form-control" name="allergy" rows="5" placeholder="Enter your Allergies" required  ng-model="register.regData.disease">
+    </textarea>
+    <br>
+
+    <button class="btn btn-primary" type="submit"> Register </button>
+</form>
+<br>
+
+<div class="jumbotron text-center" ng-show="register.loading">
+    <span class="glyphicon glyphicon-repeat spinner"></span>
+    <p> Loading..</p>
+</div>
+<br>
+<div class="row show-hide-message" ng-show="register.success">
+    <div class="alert alert-success">{{register.success}}</div>
+</div>
+
+<br>
+<div class="row show-hide-message" ng-show="register.error">
+    <div class="alert alert-danger">{{register.error}}</div>
+</div>

@@ -2,7 +2,7 @@
 
 var authApp = angular.module('AuthApp');
 
-userApp.factory('AuthService', ['$http', '$timeout',
+authApp.factory('AuthService', ['$http', '$timeout',
     function ($http, $timeout) {
 
         const service = {};
@@ -11,15 +11,15 @@ userApp.factory('AuthService', ['$http', '$timeout',
 
             $timeout(function () {
 
-                    var response = [
-                        {success: credentials.username === 'munsif1' && credentials.password === 'munsif1' && credentials.role === 'Administrator'},
-                        {success: credentials.username === 'munsif2' && credentials.password === 'munsif2' && credentials.role === 'Doctor'},
-                        {success: credentials.username === 'munsif3' && credentials.password === 'munsif3' && credentials.role === 'Nurse'}];
+                    var response = {success: credentials.username === 'test' && credentials.password === 'test'};
 
-                    
                     console.log(response);
 
-                    if (credentials == response) {
+                    if ((credentials.username === 'munsif' && credentials.password === '123') ||
+                        (credentials.username === 'sara' && credentials.password === '123') ||
+                        (credentials.username === 'kiru' && credentials.password === '123') ||
+                        (credentials.username === 'sudhee' && credentials.password === '123')) {
+
                         console.log('in');
                         console.log(credentials);
                         response.status = 200;

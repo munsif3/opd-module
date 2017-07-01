@@ -22,6 +22,7 @@
 <body class="hold-transition skin-green sidebar-mini fixed">
 
 <div class="wrapper fixed" ui-view>
+
 </div>
 
 <!-- REQUIRED JS SCRIPTS -->
@@ -35,6 +36,8 @@
 
 <script src="assets/plugins/slimScroll/jquery.slimscroll.js"></script>
 
+<script src="assets/plugins/chartjs/Chart.js"></script>
+
 <!--Angular-->
 <script src="mods/angular/angular.js"></script>
 <!--Angular Route-->
@@ -42,6 +45,7 @@
 <!--Angular UI Router-->
 <script src="mods/angular-ui-router/release/angular-ui-router.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.6.0/angular-local-storage.js"></script>
 
 <!--Custom JS-->
 <!--Dashboard Management-->
@@ -58,6 +62,48 @@
 <!--4. Services-->
 <script src="services/user.services.js"></script>
 <script src="services/authentication.service.js"></script>
+
+
+<!-- Patient Visit Handling -->
+<!--1. Modules -->
+<script src ="modules/pvs-app.module.js"></script>
+<!--2. Routes-->
+<!--<script src="routes/pvs.routes.js"></script>-->
+<!--3. Controllers-->
+<script src="controllers/pvs.controller.js"></script>
+<script src="controllers/patientControl.js"></script>
+<script src="controllers/pvs.laboratory.controller.js"></script>
+<script src="controllers/pvs.prescription.controller.js"></script>
+<!--4. Services-->
+<script src="services/pvs.service.js"></script>
+<!--<script src="services/patientService.js"></script>-->
+<script src="services/pvs.laboratory.service.js"></script>
+<script src="services/pvs.prescription.service.js"></script>
+
+
+<!-- Patient Registration-->
+<!--Angular Modules-->
+<script src="modules/pr-patientModule.js"></script>
+<!--Angular Routes-->
+<!--<script src="routes/pr-patientRoutes.js"></script>-->
+<!--Angular Controllers-->
+<script src="controllers/pr-patientController.js"></script>
+<script src="controllers/pr-viewPatientController.js"></script>
+<!--Angular Services-->
+<script src="services/pr-patientService.js"></script>
+<script src="services/pr-viewPatientService.js"></script>
+
+<!--PVW-->
+
+<script src="modules/PVW_opd.modules.js"></script>
+<script src="controllers/PVW_AddToQueue.controller.js"></script>
+<script src="services/PVW_AddToQueMessagePassService.js"></script>
+<script src="controllers/PVW_MyQue.controller.js"></script>
+<script src="services/PVW_MyQueueMessagePassService.js"></script>
+<script src="controllers/PVW_Checkout.controller.js"></script>
+<script src="services/PVW_AddToQueueServices.js"></script>c=
+<script src="services/PVW_PatientService.js"></script>
+<script src="controllers/PVW_ViewPatients.controller.js"></script>
 
 </body>
 

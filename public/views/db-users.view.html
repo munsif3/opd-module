@@ -34,7 +34,7 @@
                             <th>UserID</th>
                         </tr>
                         <tr ng-controller="UserController" ng-repeat="user in users | filter:searchUser"
-                            ui-sref="dashboard.users-view-one({userId: user._id})">
+                            ui-sref="dashboard-admin.users-view-one({userId: user._id})">
                             <td>{{$index+1}}</td>
                             <td>{{user.username}}</td>
                             <td>{{user.password}}</td>

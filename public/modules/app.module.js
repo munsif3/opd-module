@@ -4,5 +4,9 @@ var mainApp = angular.module('MainApp', [
     // 'ngRoute',
     'ui.router',
     'UserApp',
-    'AuthApp'
+    'AuthApp',
+    'OPDApp',
+    'pvsApp',
+    'patientApp'
+
 ]);

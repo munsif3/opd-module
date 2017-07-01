@@ -1,0 +1,94 @@
+<style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        h2{
+            text-align: center;
+        }
+</style>
+
+
+
+<h2>Patients' Details</h2>
+<div style="float: right;">
+    <label> Search</label>
+    <input type="text"  ng-model="search">
+</div>
+<br>
+<table>
+    <tr>
+        <th>NIC</th>
+        <th>Full Name</th>
+        <th>Gender</th>
+        <th>Date Of Birth</th>
+        <th>Address</th>
+        <th>Telephone No</th>
+        <th>Operations</th>
+    </tr>
+    <tr ng-repeat="patient in patients | filter:search">
+        <td>{{patient.nic}}</td>
+        <td>{{patient.title}}. {{patient.firstName}} {{patient.lastName}}</td>
+        <td>{{patient.gender}}</td>
+        <td>{{patient.dateOfBirth}}</td>
+        <td>{{patient.address}}</td>
+        <td>{{patient.telephoneNo}}</td>
+        <td><button class="btn btn-primary" data-toggle="modal" data-target="#myModal"> Generate Patient Card </button></td>
+    </tr>
+</table>
+
+
+<div class="container">
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title">Patient Card</h2>
+        </div>
+        <div class="modal-body">
+
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+            <div class="w3-container">
+
+                <div class="w3-card-4 w3-dark-grey" style="width: 30%;margin: 0 auto;">
+
+                    <div class="w3-container w3-center" ng-model="patientDetails">
+                        <!--<h3>Patient Card</h3>-->
+                        <img src="/app/assets/dist/img/avatar5.png" alt="Avatar" style="width:80%">
+                        <h5>Ms . Kiru Bala</h5>
+                        <h5>989646931V</h5>
+
+                        <div class="w3-section">
+                            <button class="w3-button w3-green">Print Card</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

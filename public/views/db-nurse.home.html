@@ -22,26 +22,32 @@
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li class="navsidebar">
-                <a href=""> <i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                <a ui-sref=""> <i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
             </li>
             <li class="navsidebar">
-                <a href=""> <i class="fa fa-male"></i> <span>New Patients</span></a>
+                <a ui-sref="dashboard-nurse.patient-view"> <i class="fa fa-male"></i> <span>View Patients</span></a>
             </li>
             <li class="navsidebar">
-                <a href=""> <i class="fa fa-search"></i> <span>Search</span></a>
+                <a ui-sref="dashboard-nurse.patient-register"> <i class="fa fa-male"></i> <span>Register Patients</span></a>
             </li>
             <li class="navsidebar">
-                <a href=""> <i class="fa fa-book"></i> <span>Reports</span></a>
+                <a ui-sref="dashboard-nurse.patientOverView"> <i class="fa fa-female"></i> <span>Select Patients</span></a>
             </li>
-            <li class="treeview">
-                <a href=""> <i class="fa fa-th-list"></i> <span>Procedure Room</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li class="navsidebar"><a href=""><i class="fa fa-circle-o"></i>Treatment Room</a></li>
-                    <li class="navsidebar"><a href=""><i class="fa fa-circle-o"></i>Injection Room</a></li>
-                </ul>
+            <li class="navsidebar">
+                <a ui-sref=""> <i class="fa fa-search"></i> <span>Search</span></a>
             </li>
+            <li class="navsidebar">
+                <a ui-sref=""> <i class="fa fa-book"></i> <span>Reports</span></a>
+            </li>
+            <!--<li class="treeview">-->
+                <!--<a href=""> <i class="fa fa-th-list"></i> <span>Procedure Room</span>-->
+                    <!--<i class="fa fa-angle-left pull-right"></i>-->
+                <!--</a>-->
+                <!--<ul class="treeview-menu">-->
+                    <!--<li class="navsidebar"><a ui-sref=""><i class="fa fa-circle-o"></i>Treatment Room</a></li>-->
+                    <!--<li class="navsidebar"><a ui-sref=""><i class="fa fa-circle-o"></i>Injection Room</a></li>-->
+                <!--</ul>-->
+            <!--</li>-->
         </ul>
         <!-- /.sidebar-menu -->
     </section>

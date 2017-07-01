@@ -21,19 +21,32 @@
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="navsidebar"><a href=""> <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <li class="navsidebar"><a ui-sref=""> <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a></li>
-            <li class="navsidebar"><a href=""> <i class="fa fa-stethoscope"></i> <span>My OPD Patients</span>
+            <li class="navsidebar"><a ui-sref="dashboard-doctor.visitList"> <i class="fa fa-stethoscope"></i> <span>My OPD Patients</span>
             </a></li>
-            <li class="navsidebar"><a href=""> <i class="fa fa-sort-amount-asc"></i> <span>My Queue</span>
-                <small class="label pull-right bg-yellow">1</small>
-            </a></li>
-            <li class="treeview"><a href=""> <i class="fa fa-th-list"></i> <span>Questionnaire</span>
+
+            <li class="treeview"><a ui-sref=""> <i class="fa fa-th-list"></i> <span>Patient Visit</span>
                 <i class="fa fa-angle-left pull-right"></i>
             </a>
                 <ul class="treeview-menu">
-                    <li class="navsidebar"><a href=""><i class="fa fa-circle-o"></i> Add Questionnaire</a></li>
-                    <li class="navsidebar"><a href=""><i class="fa fa-circle-o"></i> View Questionnaire</a></li>
+                    <li class="navsidebar"><a ui-sref="dashboard-doctor.prescription"><i class="fa fa-circle-o"></i> Prescription</a></li>
+                    <li class="navsidebar"><a ui-sref="dashboard-doctor.laboratory"><i class="fa fa-circle-o"></i> Laboratory</a></li>
+                    <li class="navsidebar"><a ui-sref="dashboard-doctor.visitList"><i class="fa fa-circle-o"></i> Diagnosis</a></li>
+                    <li class="navsidebar"><a ui-sref="dashboard-doctor.history"><i class="fa fa-circle-o"></i> History</a></li>
+                    <li class="navsidebar"><a ui-sref="dashboard-doctor.visit"><i class="fa fa-circle-o"></i> Visit</a></li>
+                </ul>
+            </li>
+
+            <li class="navsidebar"><a ui-sref="dashboard-doctor.myQueue"> <i class="fa fa-sort-amount-asc"></i> <span>My Queue</span>
+                <small class="label pull-right bg-yellow">1</small>
+            </a></li>
+            <li class="treeview"><a ui-sref=""> <i class="fa fa-th-list"></i> <span>Questionnaire</span>
+                <i class="fa fa-angle-left pull-right"></i>
+            </a>
+                <ul class="treeview-menu">
+                    <li class="navsidebar"><a ui-sref="dashboard-doctor.question-add"><i class="fa fa-circle-o"></i> Add Questionnaire</a></li>
+                    <li class="navsidebar"><a ui-sref="dashboard-doctor.question-view"><i class="fa fa-circle-o"></i> View Questionnaire</a></li>
                 </ul>
             </li>
         </ul>

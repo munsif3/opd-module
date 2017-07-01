@@ -1,4 +1,11 @@
 <div class="hold-transition login-page jumbotron">
+    <script>
+        function assignUser() {
+            var role = document.getElementById("user").value;
+            console.log(role);
+            localStorage.__loggedUser = role;
+        }
+    </script>
     <div class="login-box">
         <div class="login-logo">
             <img src="assets/dist/img/opd.png" alt="OPD Module" width="128" height="128">
@@ -19,35 +26,15 @@
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
 
-                    <div class="form-group">
-                        <div class="radio ">
-                            <label>
-                                <input type="radio" name="role" id="Doctor" value="Doctor" ng-model="credentials.role">
-                                Doctor
-                            </label>
-                        </div>
-                        <div class="radio ">
-                            <label>
-                                <input type="radio" name="role" id="Nurse" value="Nurse" ng-model="credentials.role">
-                                Nurse
-                            </label>
-                        </div>
-                        <div class="radio ">
-                            <label>
-                                <input type="radio" name="role" id="Administrator" value="Administrator" ng-model="credentials.role">
-                                Administrator
-                            </label>
-                        </div>
-                    </div>
-
+                <div class="well">{{error}}</div>
                 <div class="row">
+
                     <!-- /.col -->
                     <br>
                     <div class="col-xs-12">
-                        <!--<a href="views/index.html" class="btn btn-warning btn-block btn-flat">Sign In</a>-->
-                        <!--<button type="button" class="btn btn-warning btn-block btn-flat" onclick="loginUser()">Sign In-->
-                        <!--</button>-->
-                        <button class="btn btn-warning btn-lg center-block" type="submit">Login</button>
+                        
+                        <button class="btn btn-warning btn-lg center-block" onclick="assignUser()" type="submit">Login
+                        </button>
                     </div>
                     <!-- /.col -->
                     <br><br>

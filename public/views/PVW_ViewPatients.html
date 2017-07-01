@@ -1,0 +1,50 @@
+<div id="tablecont" style="border:RGB(245,245,245) 2px solid;width: 100%;height:530px;overflow-y:scroll" ng-controller="PatientViewCtrl" ng-init="getAllPatients()">
+    <div id="tbody">
+
+    </div><table class="table table-bordered table-striped table-hover" id="testp">
+    <thead>
+    <tr>
+
+        <!--<th width="50px">ID</th>-->
+        <th>Name</th>
+        <th width="100px">DOB</th>
+        <th width="80px">Gender</th>
+        <th width="100px">Alergy</th>
+        <th width="100px">NIC/HIN/Passport</th>
+        <th width="100px">Telephone</th>
+        <th>Address</th>
+
+    </tr>
+
+
+
+    </thead>
+
+
+    <tbody>
+
+    <tr style="font-size: 13px; cursor: pointer; display: table-row;" ng-repeat="patient in patients" ng-click="setPatient(patient);go('dashboard-nurse.patientToQueue')">
+
+        <!--<td id="tdpatientID"></td>-->
+        <td id="tdname">{{patient.firstName}}</td>
+        <td id="tddob">{{patient.dateOfBirth}}</td>
+        <td id="tdgender">{{patient.gender}}</td>
+        <td id="tdcivil">{{patient.disease}}</td>
+        <td id="tdnic">{{patient.nic}}</td>
+        <td id="tdtel">{{patient.telephoneNo}}</td>
+        <td id="tdaddr">{{patient.address}}</td>
+
+
+    </tr><tr style="font-size: 13px; cursor: pointer; display: table-row;" onclick="window.location='http://his.sliit.lk/OPD/index.php/operator_home_c/viewpatient/2'">
+
+
+    </tr>
+
+    </tbody>
+
+
+
+</table>
+
+
+</div>
